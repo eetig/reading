@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="reading-account" />
+        <module name="reading-homepage" />
+        <module name="reading-feign-client" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="reading-account" options="-parameters" />
+      <module name="reading-feign-client" options="-parameters" />
+      <module name="reading-homepage" options="-parameters" />
+    </option>
   </component>
 </project>
