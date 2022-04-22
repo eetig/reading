@@ -1,14 +1,13 @@
 package com.eetig.reading.account.controller;
 
+import cn.zealon.readingcloud.common.request.RequestParams;
 import com.eetig.reading.account.service.UserLikeSeeService;
+import com.reading.common.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Date 2022/4/9 周六 20:19
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("account/like-see")
-@Api(description = "爱看")
+@Api(description = "用户爱看服务接口")
 public class UserLikeSeeController {
 
     @Autowired
@@ -30,4 +29,13 @@ public class UserLikeSeeController {
     public String getUserLikeBookList(@Param(value = "userId") Integer userId) {
         return userLikeSeeService.getUserLikeBookList(userId);
     }
+
+    public Result likeSeeClick(@RequestHeader("userId") Integer userId, @RequestBody RequestParams params) {
+        String bookId = params.getStringValue("bookId");
+        Integer value = params.getIntValue("value");
+        return this.userLikeSeeService.likeSeeClick(userId, bookId, value);
+
+    }
+
+
 }
