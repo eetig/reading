@@ -2,14 +2,17 @@ package com.eetig.reading.account.vo;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * 书架VO
  * @author: zealon
  * @since: 2020/4/15
  */
 @Data
-public class UserBookshelfVO {
+public class UserBookshelfVO implements Serializable {
 
+    private static final long serialVersionUID = -4398989335434713242L;
     private Integer id;
 
     /**

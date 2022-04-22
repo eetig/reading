@@ -7,6 +7,8 @@
         <module>reading-homepage</module>
         <module>reading-account</module>
         <module>reading-feign-client</module>
+        <module>reading-common</module>
+        <module>reading-eureka</module>
     </modules>
 
     <parent>
@@ -100,6 +102,24 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+
+    <!-- 热启动插件 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 
 

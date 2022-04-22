@@ -4,6 +4,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * 用户业务对象
  * @author: zealon
@@ -11,7 +13,8 @@ import lombok.Data;
  */
 @ApiModel(value = "用户注册信息")
 @Data
-public class UserBO {
+public class UserBO implements Serializable {
+    private static final long serialVersionUID = -3694285812786446202L;
     /**
      * 登录名
      */

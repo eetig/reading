@@ -8,8 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="reading-account" />
+        <module name="reading-eureka" />
         <module name="reading-homepage" />
         <module name="reading-feign-client" />
+        <module name="reading-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
@@ -17,6 +19,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="reading-account" options="-parameters" />
+      <module name="reading-common" options="-parameters" />
+      <module name="reading-eureka" options="-parameters" />
       <module name="reading-feign-client" options="-parameters" />
       <module name="reading-homepage" options="-parameters" />
     </option>

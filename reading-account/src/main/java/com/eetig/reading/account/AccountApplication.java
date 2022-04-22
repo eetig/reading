@@ -1,9 +1,9 @@
 package com.eetig.reading.account;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @Date 2022/4/9 周六 16:50
@@ -13,7 +13,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableFeignClients
+@MapperScan(basePackages = "com.eetig.reading.account.dao")
 public class AccountApplication {
     public static void main(String[] args) {
         SpringApplication.run(AccountApplication.class,args);

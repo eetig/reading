@@ -1,26 +1,21 @@
 package com.eetig.reading.account.dao;
-
-import cn.zealon.readingcloud.common.pojo.account.UserLikeSee;
-import org.apache.ibatis.annotations.Param;
+import com.reading.common.pojo.account.UserLikeSee;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
- * 用户喜欢
- * @author: zealon
- * @since: 2020/4/14
- */
+ * @Date 2022/4/9 22:54
+ * @Author eetig
+ * @Description
+ * @param
+ * @Return
+ **/
+@Repository
 public interface UserLikeSeeMapper {
 
-    int deleteByUserIdAndBookId(@Param("userId") Integer userId,
-                                @Param("bookId") String bookId);
+    @Select("SELECT id, user_id as userId,book_id as bookId,create_time as createTime FROM user_like_see WHERE user_id=#{userId}")
+    List<UserLikeSee> getUserLikeBookList(Integer userId);
 
-    int insert(UserLikeSee userLikeSee);
-
-    int selectCountByUserAndBookId(@Param("userId") Integer userId,
-                                   @Param("bookId") String bookId);
-
-    List<UserLikeSee> findPageWithResult(@Param("userId") Integer userId);
-
-    Integer findPageWithCount(@Param("bookId") String bookId);
 }
