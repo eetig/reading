@@ -1,7 +1,7 @@
 package com.eetig.reading.account.controller;
 
-import cn.zealon.readingcloud.common.request.RequestParams;
 import com.eetig.reading.account.service.UserLikeSeeService;
+import com.reading.common.request.RequestParams;
 import com.reading.common.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

@@ -28,9 +28,10 @@ public class UserLikeSeeServiceImpl implements UserLikeSeeService {
 
     @Autowired
     private UserLikeSeeMapper userLikeSeeMapper;
-//
-//    @Autowired
-//    private RedisService redisService;
+
+    //redis服务
+    @Autowired
+    private RedisService redisService;
 
     @Autowired
     private ExecutorService commonQueueThreadPool;
@@ -62,8 +63,8 @@ public class UserLikeSeeServiceImpl implements UserLikeSeeService {
                 this.userLikeSeeMapper.insert(likeSee);
             }
             //更新缓存
-//            LikeSeeClickTask task = new LikeSeeClickTask(redisService, bookId, value);
-//            this.commonQueueThreadPool.execute(task);
+            LikeSeeClickTask task = new LikeSeeClickTask(redisService, bookId, value);
+            this.commonQueueThreadPool.execute(task);
         } catch (Exception e) {
             LOGGER.error("likeclick操作异常: {}",e);
             return ResultUtil.fail();

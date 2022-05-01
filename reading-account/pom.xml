@@ -58,11 +58,6 @@
 
 
         <!-- 图书中心feign客户端 -->
-        <dependency>
-            <groupId>cn.zealon</groupId>
-            <artifactId>reading-cloud-book-feign-client</artifactId>
-            <version>1.0.0</version>
-        </dependency>
 
         <!--SpringBoot 整合热部署配置 -->
         <dependency>

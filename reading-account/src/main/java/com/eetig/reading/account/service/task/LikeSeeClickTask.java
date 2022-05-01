@@ -1,6 +1,6 @@
 package com.eetig.reading.account.service.task;
 
-import cn.zealon.readingcloud.common.cache.RedisAccountKey;
+import com.reading.common.cache.RedisAccountKey;
 import com.reading.common.cache.RedisService;
 
 /**
